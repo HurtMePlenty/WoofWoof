@@ -1,0 +1,69 @@
+.modernizer-container div {
+	background-color: rgb(208, 255, 208);
+}
+
+.textshadow #textShadowTest {
+	text-shadow: 1px 1px 3px #666, -1px -1px 3px #FFF, 1px 1px #666, -1px -1px #FFF;
+}
+
+.no-textshadow #textShadowTest {
+	background-color: red !important;
+}
+
+.csstransforms #testTransforms {
+	 -moz-transform:  skewX(-20deg);
+    -ms-transform:   skewX(-20deg);
+    -webkit-transform: skewX(-20deg);
+    -o-transform:  skewX(-20deg);
+    transform:  skewX(-20deg);
+}
+
+.no-csstransforms #testTransforms {
+	background-color: red !important;
+}
+
+.csstransforms3d #testTransforms3d{
+	 -moz-transform: rotate3d(1,1,3,180deg);
+    -ms-transform: rotate3d(1,1,3,180deg);
+    -webkit-transform: rotate3d(1,1,3,180deg);
+    -o-transform: rotate3d(1,1,3,180deg);
+    transform: rotate3d(1,1,3,180deg);
+}
+
+.no-csstransforms3d #testTransforms3d{
+	background-color: red !important;
+}
+
+
+.boxshadow #testBoxshadow {
+	-moz-box-shadow: 10px 10px 0 0 #blue;
+	-webkit-box-shadow: 5px 5px 15px 10px blue;
+	box-shadow: 10px 10px 0 0 #blue; 
+}
+
+.no-boxshadow #testBoxshadow {
+	background-color: red !important;
+}
+
+.csstransitions #testTransitions {
+	transition: width 1s, height 1s, transform 1s;
+	 -moz-transition: width 1s, height 1s, -moz-transform 1s;
+	 -webkit-transition: width 1s, height 1s, -webkit-transform 1s, -webkit-box-shadow 1s;
+	 -o-transition: width 1s, height 1s,-o-transform 1s;
+}
+
+.csstransforms.csstransitions #testTransitions:hover {
+	width: 500px !important;
+	.csstransforms #testTransforms;
+	.boxshadow #testBoxshadow ;
+}
+
+.csstransforms3d.csstransitions #testTransitions:hover {
+	width: 500px !important;
+	.csstransforms3d #testTransforms3d;
+	.boxshadow #testBoxshadow ;
+}
+
+.no-csstransitions #testTransitions {
+	background-color: red !important;
+}

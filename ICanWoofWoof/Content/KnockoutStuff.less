@@ -8,16 +8,13 @@ body
 		background-color: #e5e0ff;
 		margin: 0 20px 20px 20px;
 		padding: 20px;
-		-webkit-border-radius: 0 12px 12px 12px;
-		-moz-border-radius: 0 12px 12px 12px;
-		border-radius: 0 12px 12px 12px;
+		-webkit-border-radius: 0 30px 4px 30px;
+		-moz-border-radius: 0 30px 4px 30px;
+		border-radius: 0 30px 4px 30px;
 		box-shadow: 18px 18px 30px -10px #b7aafd, -15px 12px 30px -15px red;
 		border: none;
-		transition: height 0.15s;
-		 -moz-transition: height 0.15s;
-		-webkit-transition: height 0.15s;
-		 -o-transition: height 0.15s;
 		 overflow-y: hidden;
+		 box-sizing: border-box;
 	}
 
 	.knockout-container-collapser {
@@ -33,4 +30,12 @@ body
 		text-shadow:  2px 2px 3px black;
 		cursor: pointer;
 	}
+
+	.collapse-transitions {
+		transition: height 0.15s;
+		-moz-transition: height 0.15s;
+		-webkit-transition: height 0.15s;
+		-o-transition: height 0.15s;
+	}
+
 }

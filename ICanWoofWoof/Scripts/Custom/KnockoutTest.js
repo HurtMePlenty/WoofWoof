@@ -1,6 +1,22 @@
 ﻿$(function() {
 
-    $('')
+    $('.knockout-container-collapser').mousedown(function (e) {
+        e.preventDefault();
+    });
+    $('.knockout-container').css('height', 500);
+    $('.knockout-container-collapser').click(function (e) {
+        e.preventDefault();
+        var $cont = $(this).parent().find('.knockout-container');
+        var isCollapsed = $cont.data('isCollapsed');
+        if(!isCollapsed) {
+            $cont.data('isCollapsed', true);
+            $cont.data('initHeight', $cont.height());
+            $cont.css('height', 0);
+        } else {
+            $cont.data('isCollapsed', false);
+            $cont.css('height', $cont.data('initHeight'));
+        }
+    });
 
 
     function appViewModel() {

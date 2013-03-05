@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="~/Content/bootstrap-responsive.css">
     <link rel="stylesheet" href="~/Content/Main.css">
     <link rel="stylesheet" href="~/Content/ModernizerStuff.css">
-    @Scripts.Render("~/Scripts/modernizr-2.6.2.js")
+        <link rel="stylesheet" href="~/Content/KnockoutStuff.css">
+    @Scripts.Render("~/Scripts/jquery-1.9.1.js","~/Scripts/modernizr-2.6.2.js", "~/Scripts/knockout-2.2.1.debug.js")
+    @RenderSection("Scripts", false)
 </head>
 <body>
     <div class="row-fluid">

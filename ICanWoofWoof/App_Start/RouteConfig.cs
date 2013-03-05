@@ -13,17 +13,16 @@ namespace ICanWoofWoof
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes.MapRoute(
-            name: "Modernizer",
-            url: "Modern",
-            defaults: new { controller = "Home", action = "CheckModernizer" }
-        );
+            routes.MapRoute("Modernizer", "Modern", new {controller = "Home", action = "CheckModernizer"}
+                );
 
-            routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-            );
+            routes.MapRoute("Knockout", "Knockout", new { controller = "Home", action = "CheckKnockout" }
+                );
+
+
+            routes.MapRoute("Default", "{controller}/{action}/{id}",
+                            new {controller = "Home", action = "Index", id = UrlParameter.Optional}
+                );
         }
     }
 }

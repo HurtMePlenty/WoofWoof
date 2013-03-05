@@ -1,12 +1,49 @@
-﻿@model dynamic
+﻿@using System.Web.Optimization
+@model dynamic
 
+@section Scripts
+{
+    @Scripts.Render("~/Scripts/Custom/KnockoutTest.js")
+}
 
 @section  Header
 {
-    Lets Check the cool thing called modernizer
+Lets Check the cool thing called KnockoutJS
 }
-<div class="container-fluid">
-    
+
+
+<div class="row-fluid">
+
+    <div class="span6">
+        <div class="knockout-container-collapser">
+    Collapser
+    </div>
+        <div class="container-fluid knockout-container">
+
+            <span class="label label-info ">Name:</span>
+            <div class="info-block">
+                <input type="text" name="Name" data-bind="text: name" />
+            </div>
+            <div class="info-block">
+                <span class="label label-info">Adress</span>
+            </div>
+            <div class="info-block">
+                <input type="text" name="Adress" data-bind="text: adress" />
+            </div>
+        </div>
+    </div>
+    <div class="span6">
+                <div class="knockout-container-collapser">
+    Collapser
+    </div>
+        <div class="container-fluid knockout-container">
+            <span class="label label-info">Script information: </span>
+            <div class="info-block">
+                <span data-bind="text: name" class="label"></span>
+            </div>
+            <div class="info-block">
+                <span data-bind="text: adress" class="label"></span>
+            </div>
+        </div>
+    </div>
 </div>
-
-

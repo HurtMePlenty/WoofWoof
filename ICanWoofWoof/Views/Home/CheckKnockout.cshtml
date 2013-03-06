@@ -22,13 +22,13 @@ Lets Check the cool thing called KnockoutJS
 
             <span class="label label-info ">Name:</span>
             <div class="info-block">
-                <input type="text" name="Name" data-bind="text: name" />
+                <input type="text" name="Name" data-bind="value: name" />
             </div>
             <div class="info-block">
                 <span class="label label-info">Adress</span>
             </div>
             <div class="info-block">
-                <input type="text" name="Adress" data-bind="text: adress" />
+                <input type="text" name="Adress" data-bind="value: adress" />
             </div>
         </div>
     </div>
@@ -43,6 +43,9 @@ Lets Check the cool thing called KnockoutJS
             </div>
             <div class="info-block">
                 <span data-bind="text: adress" class="label"></span>
+            </div>
+            <div class="info-block">
+                <span data-bind="text: fullInfo" class="label"></span>
             </div>
         </div>
     </div>

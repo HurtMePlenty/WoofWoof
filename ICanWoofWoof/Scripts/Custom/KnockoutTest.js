@@ -25,8 +25,13 @@
 
 
     function appViewModel() {
-        this.name = "Bert";
-        this.adress = "Bertington";
+        var self = this;
+        this.name = ko.observable("Bert");
+        this.adress = ko.observable("Town");
+
+        this.fullInfo = ko.computed(function() {
+            return "NAME: " + self.name() + " FROM: " + self.adress();
+        }, this);
     }
 
     // Activates knockout.js

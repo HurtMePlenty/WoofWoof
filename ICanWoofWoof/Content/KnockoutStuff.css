@@ -11,7 +11,6 @@ body .knockout-container {
   box-shadow: 18px 18px 30px -10px #b7aafd, -15px 12px 30px -15px #ff0000;
   border: none;
   overflow-y: hidden;
-  box-sizing: border-box;
 }
 body .knockout-container-collapser {
   margin-left: 20px;
@@ -31,4 +30,17 @@ body .collapse-transitions {
   -moz-transition: height 0.15s;
   -webkit-transition: height 0.15s;
   -o-transition: height 0.15s;
+}
+body .knockout-food-table {
+  margin-top: 20px;
+  border: 1px solid;
+  border-collapse: collapse;
+}
+body .knockout-food-table td {
+  text-align: center;
+  border: 1px solid;
+  padding: 10px;
+}
+body .knockout-food-table input[type="text"] {
+  width: 80px;
 }

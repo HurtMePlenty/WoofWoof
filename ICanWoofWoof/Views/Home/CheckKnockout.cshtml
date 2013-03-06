@@ -16,26 +16,75 @@ Lets Check the cool thing called KnockoutJS
 
     <div class="span6">
         <div class="knockout-container-collapser collapse-header-transitions">
-    Collapser
-    </div>
-        <div class="container-fluid knockout-container collapse-transitions" >
+            Collapser
+        </div>
+        <div class="container-fluid knockout-container collapse-transitions">
+
+
+            <div class="info-block">
+                <span class="label label-important">Lets check some basics:</span>
+                <br />
+                <br />
+            </div>
 
             <span class="label label-info ">Name:</span>
             <div class="info-block">
-                <input type="text" name="Name" data-bind="text: name" />
+                <input type="text" name="Name" data-bind="value: name" />
             </div>
             <div class="info-block">
                 <span class="label label-info">Adress</span>
             </div>
             <div class="info-block">
-                <input type="text" name="Adress" data-bind="text: adress" />
+                <input type="text" name="Adress" data-bind="value: adress" />
             </div>
+
+            <div class="info-block">
+                <input type="button" class="btn" value="Capitalize" data-bind="click: capitalizeName" />
+            </div>
+
+
+            <div class="info-block">
+                <span class="label label-important">Now lets check how to work with lists of data:</span>
+                <br />
+                <br />
+            </div>
+
+            <div class="info-block">
+                <span class="label label-info">Food List:</span>
+            </div>
+
+            <div>
+                <table class="knockout-food-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                     @*       <th>Meal</th>
+                            <th>Price</th>
+                            <th>Salat</th>*@
+                        </tr>
+                    </thead>
+                    <tbody data-bind="foreach: persons">
+                        <tr>
+                            <td data-bind="text: personName"></td>
+      @*                      <td> <select data-bind="options: $root.availableMeals, optionsText: 'meal'"></select> </td>
+                            <td> <input type="text" data-bind="value: price"/>  </td>
+                            <td data-bind="text: salat.salatName"></td>*@
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+            
+            <div class="info-block">
+                <input type="button" class="btn" value="Add new" data-bind="click: addOneMore" />
+            </div>
+
         </div>
     </div>
     <div class="span6">
-                <div class="knockout-container-collapser collapse-transitions">
-    Collapser
-    </div>
+        <div class="knockout-container-collapser collapse-transitions">
+            Collapser
+        </div>
         <div class="container-fluid knockout-container">
             <span class="label label-info">Script information: </span>
             <div class="info-block">
@@ -43,6 +92,9 @@ Lets Check the cool thing called KnockoutJS
             </div>
             <div class="info-block">
                 <span data-bind="text: adress" class="label"></span>
+            </div>
+            <div class="info-block">
+                <span data-bind="text: fullInfo" class="label"></span>
             </div>
         </div>
     </div>

@@ -56,39 +56,33 @@
             this.name(currentVal.toUpperCase()); // Write back a modified value
         };
         
-        //function salat(salatName, quality) {
-        //    this.salatName = salatName;
-        //    this.quality = quality;
-        //}
+        function salat(salatName, quality) {
+            this.salatName = salatName;
+            this.quality = quality;
+        }
         
-        //this.salats = [new salat('Cool salat', 'good'), new salat('Shit trash', 'bad')];
+        this.salats = [new salat('Cool salat', 'good'), new salat('Shit trash', 'bad')];
 
-        //function meal (mealName, price, salat) {
-        //    this.mealName = mealName;
-        //    this.price = price;
-        //    this.salat = salat;
-        //}
-
-        //this.availableMeals = ko.observableArray([
-        //    new meal('Standard (sandwich)', 0, this.salats[0]),
-        //    new meal('Premium (lobster)', 34.95, this.salats[1])
-        //]);
-
-        //this.availableMeals = ko.observableArray([
-        //    { meal: "Standard (sandwich)", price: 0, salat: this.salats[0] },
-        //    { meal: "Premium (lobster)", price: 34.95, salat: this.salats[1] },
-        //    { meal: "Ultimate (whole zebra)", price: 290, salat: this.salats[0] }
-        //]);
-
-        function person(personName, meal, price) {
-            this.personName = personName;
-            this.meal = meal;
+        function meal (mealName, price) {
+            this.mealName = mealName;
             this.price = price;
         }
 
+        this.availableMeals = ko.observableArray([
+            new meal('Standard (sandwich)', 0),
+            new meal('Premium (lobster)', 34.95)
+        ]);
+
+
+
+        function person(personName, meal) {
+            this.personName = personName;
+            this.meal = ko.observable(meal);
+ }
+
         this.persons = ko.observableArray([
-                        new person('Ashot', '', ''),
-                        new person('Vazgen', '', '')]
+                        new person('Ashot', this.availableMeals()[0]),
+                        new person('Vazgen', this.availableMeals()[1])]
         );
 
 

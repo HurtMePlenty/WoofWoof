@@ -56,38 +56,41 @@
             this.name(currentVal.toUpperCase()); // Write back a modified value
         };
         
-        function salat(salatName, quality) {
-            this.salatName = salatName;
-            this.quality = quality;
+        function salat(salatName, price) {
+            this.salatName = ko.observable(salatName);
+            this.price = ko.observable(price);
         }
         
-        this.salats = [new salat('Cool salat', 'good'), new salat('Shit trash', 'bad')];
+        this.salats = ko.observable([new salat('Cool salat',  7.30),
+                                     new salat('Shit trash',  5.50)]);
 
         function meal (mealName, price) {
-            this.mealName = mealName;
-            this.price = price;
+            this.mealName = ko.observable(mealName);
+            this.price = ko.observable(price);
         }
 
         this.availableMeals = ko.observableArray([
-            new meal('Standard (sandwich)', 0),
+            new meal('Standard (sandwich)', 23.45),
             new meal('Premium (lobster)', 34.95)
         ]);
 
-
-
-        function person(personName, meal) {
+        function person(personName, meal, salat) {
             this.personName = personName;
             this.meal = ko.observable(meal);
+            this.salat = ko.observable(salat);
+            this.price = function() {
+                return this.meal().price() + this.salat().price();
+            };
  }
 
         this.persons = ko.observableArray([
-                        new person('Ashot', this.availableMeals()[0]),
-                        new person('Vazgen', this.availableMeals()[1])]
+                        new person('Ashot', this.availableMeals()[0], this.salats()[0]),
+                        new person('Vazgen', this.availableMeals()[1], this.salats()[1])]
         );
 
 
         this.addOneMore = function() {
-            //self.persons.push({ meal: 'Woof', price: 100, salat: self.salats[0] });
+            self.persons.push( new person('New person', this.availableMeals()[0], this.salats()[1]));
         };
     }
 

@@ -52,7 +52,31 @@ Lets Check the cool thing called KnockoutJS
             <div class="info-block">
                 <span class="label label-info">Food List:</span>
             </div>
+            
+            
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Salat Name</th>
+                            <th>Salat Price</th>
+                        </tr>
+                    </thead>
+                    <tbody data-bind="foreach: salats">
+                        <tr>
+                            <td> <input type="text" data-bind="value: salatName" /> </td>
+                            <td> <input type="text" data-bind="value: price"> </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
+            
+            <div class="info-block">
+                <span class="label label-info">Person List:</span>
+            </div>
+            
+            
             <div>
                 <table class="knockout-food-table">
                     <thead>
@@ -60,14 +84,15 @@ Lets Check the cool thing called KnockoutJS
                             <th>Name</th>
                             <th>Meal</th>
                             <th>Salat</th>
+                            <th>Price</th>
                         </tr>
                     </thead>
                     <tbody data-bind="foreach: persons">
                         <tr>
-                            <td data-bind="text: personName"></td>
+                            <td> <input type="text" data-bind="value: personName" /> </td>
                             <td> <select data-bind="options: $root.availableMeals, value: meal, optionsText: 'mealName'"></select> </td>
-                            <td> <select data-bind="options: $root.salats, optionsText: 'salatName'"></select> </td>
-
+                            <td> <select data-bind="options: $root.salats, value: salat, optionsText: 'salatName'"></select> </td>
+                            <td data-bind="text: price()"></td>
                         </tr>
                     </tbody>
                 </table>

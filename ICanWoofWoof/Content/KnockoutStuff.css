@@ -1,4 +1,4 @@
-﻿body .info-block {
+body .info-block {
   margin-top: 10px;
 }
 body .knockout-container {
@@ -47,10 +47,13 @@ body .knockout-food-table td {
   text-align: center;
   border: 1px solid;
   padding: 10px;
+  vertical-align: middle;
 }
 body .knockout-food-table input[type="text"] {
   width: 80px;
+  margin: 0;
 }
 body .knockout-food-table select {
   width: 170px;
+  margin: 0;
 }

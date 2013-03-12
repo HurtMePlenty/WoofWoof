@@ -57,3 +57,10 @@ body .knockout-food-table select {
   width: 170px;
   margin: 0;
 }
+body .delete-action {
+  color: red;
+  font-style: italic;
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
+}

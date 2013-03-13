@@ -79,7 +79,6 @@
             this.meal = ko.observable(meal);
             this.salat = ko.observable(salat);
             this.price = function () {
-                var a = this.personName();
                 return (parseFloat(this.meal().price()) + parseFloat(this.salat().price())).toFixed(2);
             };
  }
@@ -101,8 +100,9 @@
 
         this.totalSurcharge2 = ko.computed(function() {
             alert();
-
-            return self.persons()[1].price();
+            if(self.persons()[0].personName() == 'qwer')
+                return self.persons()[0].price();
+            return 'no';
         });
 
 
@@ -116,7 +116,7 @@
 
         this.mutateAll = function() {
             for(var i = 0; i < self.persons().length; i++) {
-                self.persons()[i].personName('Gogi');
+                self.persons()[i].personName('aaaa');
             }
         };
     }

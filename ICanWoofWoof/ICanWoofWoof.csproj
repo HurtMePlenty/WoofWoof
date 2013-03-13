@@ -173,6 +173,7 @@
     <Content Include="Scripts\jquery-1.9.1.min.map" />
     <Content Include="Views\Home\CheckModernizer.cshtml" />
     <Content Include="Views\Home\CheckKnockout.cshtml" />
+    <Content Include="Views\Home\KnockoutSinglePage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

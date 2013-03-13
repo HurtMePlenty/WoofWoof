@@ -19,6 +19,9 @@ namespace ICanWoofWoof
             routes.MapRoute("Knockout", "Knockout", new { controller = "Home", action = "CheckKnockout" }
                 );
 
+            routes.MapRoute("Knockout2", "Knockout2", new { controller = "Home", action = "KnockoutSinglePage" }
+                );
+
 
             routes.MapRoute("Default", "{controller}/{action}/{id}",
                             new {controller = "Home", action = "Index", id = UrlParameter.Optional}

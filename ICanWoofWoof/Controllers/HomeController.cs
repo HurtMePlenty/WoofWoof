@@ -31,5 +31,10 @@ namespace ICanWoofWoof.Controllers
             return View();
         }
 
+        public ActionResult KnockoutSinglePage()
+        {
+            return View();
+        }
+
     }
 }

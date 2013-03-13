@@ -8,13 +8,14 @@
 
 @section  Header
 {
-Lets Check the cool thing called KnockoutJS
+    Lets Check the cool thing called KnockoutJS.
+    Creating basic bindings.
 }
 
 
 <div class="row-fluid">
 
-    <div class="span8">
+    <div class="span9">
         <div class="knockout-container-collapser collapse-header-transitions">
             Collapser
         </div>
@@ -70,6 +71,23 @@ Lets Check the cool thing called KnockoutJS
                     </tbody>
                 </table>
             </div>
+            
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th> Meal Name </th>
+                            <th> Meal Price </th>
+                        </tr>
+                    </thead>
+                    <tbody data-bind="foreach: availableMeals">
+                        <tr>
+                            <td> <input type="text" data-bind="value: mealName"/> </td>
+                            <td> <input type="text" data-bind="value: price"/> </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
             
             <div class="info-block">
@@ -85,6 +103,7 @@ Lets Check the cool thing called KnockoutJS
                             <th>Meal</th>
                             <th>Salat</th>
                             <th>Price</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody data-bind="foreach: persons">
@@ -93,19 +112,31 @@ Lets Check the cool thing called KnockoutJS
                             <td> <select data-bind="options: $root.availableMeals, value: meal, optionsText: 'mealName'"></select> </td>
                             <td> <select data-bind="options: $root.salats, value: salat, optionsText: 'salatName'"></select> </td>
                             <td data-bind="text: price()"></td>
-                        </tr>
-                    </tbody>
+                            <td> <span class="delete-action" data-bind="click: function(person){ $root.removePerson(person)}">DEL</span> </td>
+                            </tbody>
                 </table>
 
             </div>
             
             <div class="info-block">
-                <input type="button" class="btn" value="Add new" data-bind="click: addOneMore" />
+                <input type="button" class="btn" value="Add new" data-bind="click: addOneMore, enable: persons().length < 5" />
+            </div>
+            
+            <div class="info-block">
+                Total surcharge: <span data-bind="text: totalSurcharge()"> </span>
+            </div>
+            
+            <div class="info-block">
+                Total surcharge: <span data-bind="text: firstPersonSurcharge()"> </span>
+            </div>
+            
+            <div class="info-block">
+                 <input type="button" value="Mutate all" class="btn" data-bind="click: mutateAll">
             </div>
 
         </div>
     </div>
-    <div class="span4">
+    <div class="span3">
         <div class="knockout-container-collapser collapse-header-transitions">
             Collapser
         </div>

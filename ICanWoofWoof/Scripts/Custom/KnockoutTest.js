@@ -79,7 +79,7 @@
             this.meal = ko.observable(meal);
             this.salat = ko.observable(salat);
             this.price = function() {
-                return this.meal().price() + this.salat().price();
+                return (parseFloat(this.meal().price()) + parseFloat(this.salat().price())).toFixed(2);
             };
  }
 

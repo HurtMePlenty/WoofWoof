@@ -1,3 +1,5 @@
+@knockout-single-page-bgcolor: #cacdf1;
+@knockout-page-background: #e5e0ff;
 body
 {
     .info-block
@@ -15,7 +17,7 @@ body
         -moz-border-radius: 0 30px 4px 30px;
         -webkit-border-radius: 0 30px 4px 30px;
         border-radius: 0 30px 4px 30px;
-        background-color: #e5e0ff;
+        background-color: @knockout-page-background;
         box-shadow: 18px 18px 30px -10px #b7aafd, -15px 12px 30px -15px red;
     }
 
@@ -27,7 +29,7 @@ body
         -moz-border-radius: 12px 12px 0 0;
         -webkit-border-radius: 12px 12px 0 0;
         border-radius: 12px 30px 0 0;
-        background-color: #e5e0ff;
+        background-color: @knockout-page-background;
         color: pink;
         text-shadow: 2px 2px 3px black;
         font-size: 110%;
@@ -62,27 +64,56 @@ body
             text-align: center;
             border: 1px solid;
             padding: 10px;
-			vertical-align: middle;
+            vertical-align: middle;
         }
 
         input[type="text"]
         {
             width: 80px;
-			margin: 0;
+            margin: 0;
         }
-        
+
         select
         {
-            width:170px;
-			margin: 0;
-		}
+            width: 170px;
+            margin: 0;
+        }
     }
 
-	.delete-action {
-		color: red;
-		font-style: italic;
-		font-weight: bold;
-		text-decoration: underline;
-		cursor: pointer;
-	}
+    .delete-action
+    {
+        color: red;
+        font-style: italic;
+        font-weight: bold;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+    .tab-menu
+    {
+        li
+        {
+            a
+            {
+                margin: 0;
+                cursor: pointer;
+
+                &:hover
+                {
+                    background-color: @knockout-single-page-bgcolor - 20;
+                }
+            }
+
+            &.active-tab
+            {
+                a
+                {
+                    background-color: @knockout-single-page-bgcolor - 50;
+                }
+            }
+        }
+
+        background-color: @knockout-single-page-bgcolor;
+        border-radius: 8px;
+    }
 }

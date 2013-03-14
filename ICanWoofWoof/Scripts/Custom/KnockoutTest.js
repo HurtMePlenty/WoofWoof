@@ -98,12 +98,9 @@
             
         };
 
-        this.totalSurcharge2 = ko.computed(function() {
-            alert();
-            if(self.persons()[0].personName() == 'qwer')
-                return self.persons()[0].price();
-            return 'no';
-        });
+        this.firstPersonSurcharge = function() {
+            return self.persons()[0].price();
+        };
 
 
         this.addOneMore = function() {

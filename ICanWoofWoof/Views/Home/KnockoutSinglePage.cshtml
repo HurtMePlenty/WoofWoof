@@ -1,0 +1,41 @@
+﻿@using System.Web.Optimization
+@model dynamic
+
+@section Scripts
+{
+    @Scripts.Render("~/Scripts/Custom/KnockoutTest.js")
+}
+
+@section  Header
+{
+    Lets Check the cool thing called KnockoutJS.
+    Single page application.
+}
+
+
+<div class="row-fluid">
+
+    <div class="span12">
+        <div class="knockout-container-collapser collapse-header-transitions">
+            Collapser
+        </div>
+        <div class="container-fluid knockout-container collapse-transitions">
+            <ul class="nav nav-pills tab-menu">
+                <li class="active-tab">
+                   <a> Inbox</a>
+                </li>
+                <li>
+                  <a>  Archive</a>
+                </li>
+                <li>
+                <a>    Sent</a>
+                </li>
+                <li>
+                  <a>  Spam</a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+
+</div>

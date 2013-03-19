@@ -3,7 +3,7 @@
 
 @section Scripts
 {
-    @Scripts.Render("~/Scripts/Custom/KnockoutTest.js")
+    @Scripts.Render("~/Scripts/Custom/KnockoutSinglePage.js")
 }
 
 @section  Header
@@ -20,19 +20,11 @@
             Collapser
         </div>
         <div class="container-fluid knockout-container collapse-transitions">
-            <ul class="nav nav-pills tab-menu">
-                <li class="active-tab">
-                   <a> Inbox</a>
+            <ul class="nav nav-pills tab-menu" data-bind="foreach: folders">
+                <li data-bind="css: $root.tabClass($data), click: $root.goToFolder">
+                   <a data-bind="text: $data"> </a>
                 </li>
-                <li>
-                  <a>  Archive</a>
-                </li>
-                <li>
-                <a>    Sent</a>
-                </li>
-                <li>
-                  <a>  Spam</a>
-                </li>
+
             </ul>
 
         </div>

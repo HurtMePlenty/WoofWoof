@@ -15,3 +15,11 @@
     ko.applyBindings(new WebmailViewModel());
 });
 
+
+function useGetAPI() {
+
+    $.get('/api/mailapi', function(data) {
+        alert(data);
+    });
+
+}

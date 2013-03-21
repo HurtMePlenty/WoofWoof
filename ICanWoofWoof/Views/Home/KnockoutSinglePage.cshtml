@@ -14,7 +14,6 @@
 
 
 <div class="row-fluid">
-
     <div class="span12">
         <div class="knockout-container-collapser collapse-header-transitions">
             Collapser
@@ -24,14 +23,30 @@
                 <li data-bind="css: $root.tabClass($data), click: $root.goToFolder">
                     <a data-bind="text: $data"> </a>
                 </li>
-
             </ul>
             
-             <input type="button" onclick="useGetAPI()"/>
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>From</th>
+                            <th>Date</th>
+                            <th>Subject</th>
+                            <th>Body</th>
+                        </tr>
+                    </thead>
+                    <tbody data-bind="foreach: folderData">
+                        <tr>
+                            <td data-bind="text: From"></td>
+                            <td data-bind=" "></td>
+                            <td data-bind=" "></td>
+                            <td data-bind=" "></td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
 
         </div>
     </div>
-    
-   
-
 </div>

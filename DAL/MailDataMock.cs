@@ -9,13 +9,24 @@ namespace DAL
 {
     public class MailDataMock: IMailData
     {
+        public const string MyAdress = "WoofWoof@woof.woof";
+
         public MailDataMock()
         {
             Initialize();
         }
 
         private IList<Mail> mails;
-        public IList<Mail> Mails { get { return mails; } }
+
+        public IList<Mail> GetMails()
+        {
+            return mails;
+        } 
+        
+        public IList<Mail> GetMails(Mail.Folders folder)
+        {
+            return mails.Where(m => m.To == MyAdress).ToList();
+        } 
 
         private void Initialize()
         {
@@ -23,7 +34,7 @@ namespace DAL
             mails.Add(new Mail()
                           {
                               From = "Test@test.test",
-                              To = "WoofWoof@woof.woof",
+                              To = MyAdress,
                               Date = DateTime.Now - new TimeSpan(1),
                               Subject = "Subject 1",
                               Body = "Body1",
@@ -35,7 +46,7 @@ namespace DAL
             mails.Add(new Mail()
                           {
                               From = "Test@test.test",
-                              To = "WoofWoof@woof.woof",
+                              To = MyAdress,
                               Date = DateTime.Now - new TimeSpan(1),
                               Subject = "Fcken spam",
                               Body = "spam spam spam",
@@ -47,7 +58,7 @@ namespace DAL
             mails.Add(new Mail()
                           {
                               From = "Test@test.test",
-                              To = "WoofWoof@woof.woof",
+                              To = MyAdress,
                               Date = DateTime.Now - new TimeSpan(1),
                               Subject = "Fcken spam",
                               Body = "spam spam spam",
@@ -58,7 +69,7 @@ namespace DAL
 
             mails.Add(new Mail()
                           {
-                              From = "WoofWoof@woof.woof",
+                              From = MyAdress,
                               To = "Test@test.test",
                               Date = DateTime.Now - new TimeSpan(1),
                               Subject = "wooof",
@@ -71,7 +82,7 @@ namespace DAL
 
             mails.Add(new Mail()
                           {
-                              From = "WoofWoof@woof.woof",
+                              From = MyAdress,
                               To = "Test@test.test",
                               Date = DateTime.Now - new TimeSpan(1),
                               Subject = "wooof",

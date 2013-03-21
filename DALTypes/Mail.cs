@@ -16,5 +16,13 @@ namespace DALTypes
         public bool IsSpam { get; set; }
         public bool IsSentByMe { get; set; }
         public bool IsArchive { get; set; }
+
+        public enum Folders
+        {
+            Inbox,
+            Archive,
+            Sent,
+            Spam 
+        }
     }
 }

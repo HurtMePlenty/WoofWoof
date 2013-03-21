@@ -9,6 +9,7 @@ namespace DAL
 {
     public interface IMailData
     {
-        IList<Mail> Mails { get; } 
+        IList<Mail> GetMails();
+        IList<Mail> GetMails(Mail.Folders folder);
     }
 }

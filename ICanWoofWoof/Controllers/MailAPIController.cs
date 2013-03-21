@@ -14,18 +14,12 @@ namespace ICanWoofWoof.Controllers
 {
     public class MailAPIController : ApiController
     {
-        private IDataBaseContext _dbContext = new DataBaseContextMock();
+        private readonly IDataBaseContext _dbContext = new DataBaseContextMock();
 
-        // GET api/mailapi
-        public object Get()
+        //GET api/mailapi/inbox
+        public IEnumerable<Mail> Get(Mail.Folders folder)
         {
-            return _dbContext.MailData.Mails;
-        }
-
-        // GET api/mailapi/5
-        public string Get(int id)
-        {
-            return "value";
+            return _dbContext.MailData.GetMails(folder);
         }
 
         // POST api/mailapi

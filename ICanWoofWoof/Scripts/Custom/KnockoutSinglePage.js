@@ -4,22 +4,16 @@
         var self = this;
         self.folders = ['Inbox', 'Archive', 'Sent', 'Spam'];
         self.chosenFolderId = ko.observable();
+        self.folderData = ko.observable();
         self.tabClass = function (tab) {
             return self.chosenFolderId() == tab ? 'active-tab' : '';
         };
         self.goToFolder = function (folder) {
-             self.chosenFolderId(folder);
+            self.chosenFolderId(folder);
+            $.get('/api/mailapi', { folder: folder }, self.folderData);
         };
     }
 
     ko.applyBindings(new WebmailViewModel());
 });
 
-
-function useGetAPI() {
-
-    $.get('/api/mailapi', function(data) {
-        alert(data);
-    });
-
-}

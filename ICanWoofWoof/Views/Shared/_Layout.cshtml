@@ -20,6 +20,12 @@
                         <h1>
                             @RenderSection("Header", false)
                         </h1>
+                        <ul class="nav nav-pills tab-menu">
+                            <li>@Html.ActionLink("home", "Index")</li>
+                            <li>@Html.ActionLink("try knockout", "CheckKnockout")</li>
+                            <li>@Html.ActionLink("try knockout2", "KnockoutSinglePage")</li>
+                            <li>@Html.ActionLink("try modernizer", "CheckModernizer")</li>
+                        </ul>
                     </div>
                 </div>
                 <div class="row-fluid main-container">

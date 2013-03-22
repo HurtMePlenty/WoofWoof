@@ -177,6 +177,7 @@
     <Content Include="Views\Home\CheckModernizer.cshtml" />
     <Content Include="Views\Home\CheckKnockout.cshtml" />
     <Content Include="Views\Home\KnockoutSinglePage.cshtml" />
+    <Content Include="Views\Home\TestAsyncMethods.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

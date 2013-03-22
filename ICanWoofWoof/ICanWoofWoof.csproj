@@ -178,6 +178,7 @@
     <Content Include="Views\Home\CheckKnockout.cshtml" />
     <Content Include="Views\Home\KnockoutSinglePage.cshtml" />
     <Content Include="Views\Home\TestAsyncMethods.cshtml" />
+    <Content Include="Views\Home\CheckJSBasics.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -225,7 +226,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>60537</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:62861/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

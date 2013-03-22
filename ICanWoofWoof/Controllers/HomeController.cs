@@ -34,10 +34,18 @@ namespace ICanWoofWoof.Controllers
             return View();
         }
 
+
         public ActionResult KnockoutSinglePage()
         {
             return View();
         }
+
+        public ActionResult CheckJSBasics()
+        {
+            return View();
+        }
+
+        #region Async
 
         public async Task<ActionResult> TestAsyncMethods()
         {
@@ -79,5 +87,6 @@ namespace ICanWoofWoof.Controllers
             Session["testAsync7"] = "test";
         }
 
+        #endregion
     }
 }

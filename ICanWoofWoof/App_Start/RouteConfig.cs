@@ -22,6 +22,9 @@ namespace ICanWoofWoof
             routes.MapRoute("Knockout2", "Knockout2", new { controller = "Home", action = "KnockoutSinglePage" }
                 );
 
+            routes.MapRoute("JSBasic", "JSBasic", new { controller = "Home", action = "CheckJSBasics" }
+              );
+
 
             routes.MapRoute("Default", "{controller}/{action}/{id}",
                             new {controller = "Home", action = "Index", id = UrlParameter.Optional}

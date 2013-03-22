@@ -2,8 +2,27 @@
 
 @section Header
 {
-    Home page   
+    Home page  
+}
+
+@section Scripts
+{
+    <script type="text/javascript">
+        $(function() {
+            $('#testForm').submit(function() {
+                alert('!');
+            });
+            });
+        
+    </script>
 }
 
 <h2>Nothing cool here :( </h2>
 
+
+<form id="testForm" method="POST" action="@Url.Content("~/Home/Index")" onsubmit="alert('DOM')">
+    
+    <input type="button" value="submit" onclick="$('#testForm')[0].submit()" />
+    <input type="submit" value="real submit"/>
+
+</form>

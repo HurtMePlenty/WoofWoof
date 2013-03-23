@@ -10,7 +10,7 @@
         };
         self.goToFolder = function (folder) {
             self.chosenFolderId(folder);
-            $.get('/api/mailapi', { folder: folder }, self.folderData);
+            $.get('/api/mailapi/' + folder, self.folderData);
         };
     }
 

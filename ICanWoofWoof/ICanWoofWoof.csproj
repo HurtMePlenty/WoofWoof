@@ -156,6 +156,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\Custom\Collapser.js" />
+    <Content Include="Scripts\Custom\JSBasic.js" />
     <Content Include="Scripts\Custom\KnockoutSinglePage.js" />
     <Content Include="Scripts\Custom\KnockoutTest.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />

@@ -5,16 +5,38 @@ using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
+using System.Web.Caching;
 using System.Web.Mvc;
+using ICanWoofWoof.ActionFilters;
 
 namespace ICanWoofWoof.Controllers
 {
     public class HomeController : Controller
     {
+
+        private Cache Cache
+        {
+            get { return HttpRuntime.Cache; }
+        }
+
+
+        private DateTime CurrentCachedTime
+        {
+            get
+            {
+                if (Cache["CurrentCachedTime"] == null)
+                {
+                    Cache.Add("CurrentCachedTime", DateTime.Now, null, DateTime.Now + new TimeSpan(0, 0, 20),
+                              Cache.NoSlidingExpiration, CacheItemPriority.Normal, null);
+                }
+                return (DateTime)Cache["CurrentCachedTime"] ;
+            }
+        }
+
         //
         // GET: /Home/
-
-        public  ActionResult Index()
+      
+        public ActionResult Index()
         {
             return View();
         }
@@ -22,6 +44,11 @@ namespace ICanWoofWoof.Controllers
         public ActionResult ShowAll()
         {
             return View(new string[] {"value1", "value2"});
+        }
+
+        public ActionResult CheckHelpers()
+        {
+            return View();
         }
 
         public ActionResult CheckModernizer()
@@ -45,6 +72,35 @@ namespace ICanWoofWoof.Controllers
             return View();
         }
 
+        public ActionResult TestCache()
+        {
+            ViewBag.CachedData = CurrentCachedTime; 
+            return View();
+        }
+
+        #region Filters
+
+        [MyAuthorizeFilter]
+        public string CheckAuthorize()
+        {
+            return "Validation failed";
+        }
+
+        [HandleError(View = "Error")]
+        public string CheckError()
+        {
+            throw new NotImplementedException();
+
+        }
+
+        [MyExceptionFilter]
+        public string CheckCustomError()
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
+
         #region Async
 
         public async Task<ActionResult> TestAsyncMethods()
@@ -60,13 +116,13 @@ namespace ICanWoofWoof.Controllers
             Session["testAsync2"] = "test";
 
             Session["testAsync3"] = await Task<string>.Factory.StartNew(() =>
-            {
-                Thread.Sleep(5000); 
-                return "test";
-            });
+                {
+                    Thread.Sleep(5000);
+                    return "test";
+                });
 
 
-           // Session["testAsync"] = await new WebClient().DownloadStringTaskAsync("http://habrahabr.ru");
+            // Session["testAsync"] = await new WebClient().DownloadStringTaskAsync("http://habrahabr.ru");
             int a = 123;
             Session["testAsync4"] = "test";
         }
@@ -76,10 +132,10 @@ namespace ICanWoofWoof.Controllers
             Session["testAsync5"] = "test";
 
             Session["testAsync6"] = await Task<string>.Factory.StartNew(() =>
-            {
-                Thread.Sleep(5000);
-                return "test2";
-            });
+                {
+                    Thread.Sleep(5000);
+                    return "test2";
+                });
 
 
             // Session["testAsync"] = await new WebClient().DownloadStringTaskAsync("http://habrahabr.ru");

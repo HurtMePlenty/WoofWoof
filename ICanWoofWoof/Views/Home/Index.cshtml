@@ -21,8 +21,11 @@
 
 
 <form id="testForm" method="POST" action="@Url.Content("~/Home/Index")" onsubmit="alert('DOM')">
-    
-    <input type="button" value="submit" onclick="$('#testForm')[0].submit()" />
+    <div>
+    <input type="text" style="width: 250px;" value="nothing here" class="ui-state-default"/>
+    </div>
+        <input type="button" value="submit" onclick="$('#testForm')[0].submit()" />
     <input type="submit" value="real submit"/>
+    @Url
 
 </form>

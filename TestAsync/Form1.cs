@@ -43,15 +43,14 @@ namespace TestAsync
             textBox1.Text = string.Empty;
             textBox1.Text += "Start" + System.Environment.NewLine;
 
-            var result = await Task.Factory.StartNew(() =>
-            {
-                Thread.Sleep(5000);
-                return "Done";
-            });
 
+                var result = await Task.Factory.StartNew(() =>
+                                                             {
+                                                                 Thread.Sleep(5000);
+                                                                 return "Done";
+                                                             });
+            
             textBox1.Text += result + System.Environment.NewLine;
-
-
             textBox1.Text += "End" + System.Environment.NewLine;
         }
     }

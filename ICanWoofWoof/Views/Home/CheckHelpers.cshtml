@@ -1,7 +1,7 @@
-﻿
+﻿@using ICanWoofWoof.Models
+@model CheckHelpersModel
 
 <h2>Lets Check Some Helpers?</h2>
-
 
 <div class="row-fluid">
     <div class="span12">
@@ -9,7 +9,10 @@
             Collapser
         </div>
         <div class="container-fluid knockout-container collapse-transitions">
-      
+        
+            @MyHelpers.DecoratedTextGreeting("username")
+            @Html.LabelFor(m=>m.Name, new {style = "cursor: auto;" })
+            @Html.TextBoxFor(m=>m.Name)
 
         </div>
     </div>

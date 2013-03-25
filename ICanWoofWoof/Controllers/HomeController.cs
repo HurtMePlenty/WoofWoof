@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Caching;
 using System.Web.Mvc;
 using ICanWoofWoof.ActionFilters;
+using ICanWoofWoof.Models;
 
 namespace ICanWoofWoof.Controllers
 {
@@ -46,9 +47,16 @@ namespace ICanWoofWoof.Controllers
             return View(new string[] {"value1", "value2"});
         }
 
+        [HttpGet]
         public ActionResult CheckHelpers()
         {
-            return View();
+            return View(new CheckHelpersModel());
+        }
+        
+        [HttpPost]
+        public ActionResult CheckHelpers(CheckHelpersModel model)
+        {
+            return View(model);
         }
 
         public ActionResult CheckModernizer()

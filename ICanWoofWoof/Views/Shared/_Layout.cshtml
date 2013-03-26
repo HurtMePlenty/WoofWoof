@@ -11,9 +11,11 @@
     <link rel="stylesheet" href="~/Content/Custom/KnockoutStuff.css">
     <link rel="stylesheet" href="~/Content/Custom/Collapser.css">
 
-    @Scripts.Render("~/Scripts/jquery-1.9.1.js","~/Scripts/modernizr-2.6.2.js", "~/Scripts/knockout-2.2.1.debug.js",  "~/Scripts/jquery-ui-1.10.1.js")
+    @Scripts.Render("~/Scripts/jquery-1.9.1.js","~/Scripts/modernizr-2.6.2.js", "~/Scripts/knockout-2.2.1.debug.js",  "~/Scripts/jquery-ui-1.10.1.js", "~/Scripts/jquery.unobtrusive-ajax.js", "~/Scripts/jquery.validate.js", "~/Scripts/jquery.validate.unobtrusive.js")
     @Scripts.Render("~/Scripts/Custom/Collapser.js")
     @RenderSection("Scripts", false)
+    
+    
 </head>
 <body>
     <div class="row-fluid">
@@ -25,10 +27,11 @@
                             @RenderSection("Header", false)
                         </h1>
                         <ul class="nav nav-pills tab-menu">
-                            <li>@Html.ActionLink("home", "Index")</li>
-                            <li>@Html.ActionLink("try knockout", "CheckKnockout")</li>
-                            <li>@Html.ActionLink("try knockout2", "KnockoutSinglePage")</li>
-                            <li>@Html.ActionLink("try modernizer", "CheckModernizer")</li> 
+                            <li>@Html.ActionLink("home", "Index", "Home")</li>
+                            <li>@Html.ActionLink("try knockout", "CheckKnockout", "Home")</li>
+                            <li>@Html.ActionLink("try knockout2", "KnockoutSinglePage", "Home")</li>
+                            <li>@Html.ActionLink("try modernizer", "CheckModernizer", "Home")</li> 
+                            <li>@Html.ActionLink("helpers", "CheckHelpers", "Home")</li> 
                         </ul>
                     </div>
                 </div>

@@ -1,6 +1,9 @@
 ﻿body .info-block {
   margin-top: 10px;
 }
+body .info-block label {
+  cursor: auto;
+}
 body .knockout-container {
   overflow-y: hidden;
   box-sizing: border-box;

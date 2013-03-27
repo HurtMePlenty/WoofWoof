@@ -2,8 +2,17 @@
     if (typeof console == "undefined")
         return;
     var A = function() {
-        this.name = "name";
+        this.name = "nameA";
     };
+
+    var B = function() {
+        this.name = "nameB";
+    };
+
+    A.prototype.test = "A";
+    B.prototype.test = "B";
+
+    A.prototype.constructor = B;
 
     var inst = new A();
     

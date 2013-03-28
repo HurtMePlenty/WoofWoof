@@ -9,9 +9,14 @@ namespace ICanWoofWoof.MyValidators
 {
     public class AtLeastOne: ValidationAttribute, IClientValidatable
     {
+        private const string defaultErrorMessage = "{0} or {1} is required.";
         public IEnumerable<ModelClientValidationRule> GetClientValidationRules(ModelMetadata metadata, ControllerContext context)
         {
-            throw new NotImplementedException();
+            yield return new ModelClientValidationRule()
+                {
+                    ErrorMessage = string.Format(defaultErrorMessage, metadata.DisplayName, string.Empty),
+                    ValidationType = "atleastonerequired"
+                };
         }
     }
 }

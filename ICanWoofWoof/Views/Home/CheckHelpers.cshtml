@@ -3,7 +3,7 @@
 
 @section Scripts
 {
-    @Scripts.Render("~/Scripts/Custom/CheckHelpers.js")
+    @Scripts.Render("~/Scripts/Custom/Validators/AtLeastOne.js","~/Scripts/Custom/CheckHelpers.js")
 }
 
 
@@ -34,6 +34,18 @@
                         @Html.LabelFor(m => m.Product)
                         @Html.TextBoxFor(m => m.Product)
                     </div>
+                    
+                    <div class="info-block">
+                        @Html.LabelFor(m => m.Phone)
+                        @Html.TextBoxFor(m => m.Phone)
+                    </div>
+                    
+                    <div class="info-block">
+                        @Html.LabelFor(m => m.EMail)
+                        @Html.TextBoxFor(m => m.EMail)
+                    </div>
+                    
+                    
                     <div>
                         <input type="submit" class="btn" value="Submit" />
                     </div>

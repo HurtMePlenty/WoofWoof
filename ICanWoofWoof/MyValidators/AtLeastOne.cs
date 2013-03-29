@@ -16,7 +16,14 @@ namespace ICanWoofWoof.MyValidators
                 {
                     ErrorMessage = string.Format(defaultErrorMessage, metadata.DisplayName, string.Empty),
                     ValidationType = "atleastonerequired"
+
                 };
+        
+        }
+
+        protected override ValidationResult IsValid(object value, ValidationContext validationContext)
+        {
+            return base.IsValid(value, validationContext);
         }
     }
 }

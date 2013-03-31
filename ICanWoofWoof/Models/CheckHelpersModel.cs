@@ -14,7 +14,7 @@ namespace ICanWoofWoof.Models
         public string Adress { get; set; }
         public string Product { get; set; }
         public string Quality { get; set; }
-        [AtLeastOne]
+        [AtLeastOne()]
         public string Phone { get; set; }
         public string EMail { get; set; }
     }

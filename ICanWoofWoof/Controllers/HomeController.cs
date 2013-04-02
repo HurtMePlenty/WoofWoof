@@ -56,7 +56,11 @@ namespace ICanWoofWoof.Controllers
         
         [HttpPost]
         public ActionResult CheckHelpers(CheckHelpersModel model)
-        {
+        {   
+            if (!ModelState.IsValid)
+            {
+                ViewBag.ValidationErrorMsg = ModelState.Values.SelectMany(v => v.Errors);
+            }
             return View(model);
         }
 

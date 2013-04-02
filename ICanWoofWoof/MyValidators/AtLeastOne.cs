@@ -27,7 +27,6 @@ namespace ICanWoofWoof.MyValidators
                               };
             mcvRule.ValidationParameters["param"] = "value";
             yield return mcvRule;
-
         }
 
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)

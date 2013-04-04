@@ -1,4 +1,4 @@
-﻿body .info-block {
+body .info-block {
   margin-top: 10px;
 }
 body .info-block label {
@@ -29,22 +29,22 @@ body .knockout-container-collapser {
   font-size: 110%;
   cursor: pointer;
 }
-body .knockout-food-table {
+body .knockout-table {
   margin-top: 20px;
   border: 1px solid;
   border-collapse: collapse;
 }
-body .knockout-food-table td {
+body .knockout-table td {
   text-align: center;
   border: 1px solid;
   padding: 10px;
   vertical-align: middle;
 }
-body .knockout-food-table input[type="text"] {
+body .knockout-table input[type="text"] {
   width: 80px;
   margin: 0;
 }
-body .knockout-food-table select {
+body .knockout-table select {
   width: 170px;
   margin: 0;
 }

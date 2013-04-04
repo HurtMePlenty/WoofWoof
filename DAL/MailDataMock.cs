@@ -25,7 +25,19 @@ namespace DAL
         
         public IList<Mail> GetMails(Mail.Folders folder)
         {
-            return mails.Where(m => m.To == MyAdress).ToList();
+            //return mails.Where(m => m.To == MyAdress).ToList();
+            switch (folder)
+            {
+               case Mail.Folders.Inbox:
+                    return mails.Where(m => m.To == MyAdress && !m.IsSpam && !m.IsArchive).ToList();
+               case Mail.Folders.Sent:
+                    return mails.Where(m => m.IsSentByMe).ToList();
+                case Mail.Folders.Spam:
+                    return mails.Where(m => m.IsSpam).ToList();
+                case Mail.Folders.Archive:
+                    return mails.Where(m => m.IsArchive).ToList();
+            }
+            return new List<Mail>();
         } 
 
         private void Initialize()
@@ -89,7 +101,7 @@ namespace DAL
                               Body = "wfwfwfwf",
                               IsArchive = true,
                               IsSentByMe = true,
-                              IsSpam = true
+                              IsSpam = false
                           });
         }
     }

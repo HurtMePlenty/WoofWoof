@@ -48,10 +48,10 @@
             
             <div>
                 <div data-bind="with: chosenMailData">
-                    <p>From</p>
-                    <p>To</p>
-                    <p>Date</p>
-                    <p>Subject</p>
+                    <h2 data-bind="text: Subject"> </h2>
+                    <p><label>From: </label> <span data-bind="text: From"> </span> </p>
+                    <p><label>To: </label> <span data-bind="text: To"> </span> </p>
+                    <p><label>Date: </label> <span data-bind="text: Date"> </span> </p>
                 </div>
 
             </div>

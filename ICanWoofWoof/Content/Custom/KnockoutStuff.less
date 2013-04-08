@@ -1,11 +1,14 @@
 @knockout-single-page-bgcolor: #cacdf1;
 @knockout-page-background: #e5e0ff;
+
 body
 {
     .info-block
     {
         margin-top: 10px;
-        label {
+
+        label
+        {
             cursor: auto;
         }
     }
@@ -41,6 +44,16 @@ body
 
     .knockout-table
     {
+        tr.selectable
+        {
+            cursor: pointer;
+
+            &:hover
+            {
+                background-color: #808080;
+            }
+        }
+
         margin-top: 20px;
         border: 1px solid;
         border-collapse: collapse;

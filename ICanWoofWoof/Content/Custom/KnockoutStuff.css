@@ -1,4 +1,4 @@
-body .info-block {
+﻿body .info-block {
   margin-top: 10px;
 }
 body .info-block label {
@@ -33,6 +33,12 @@ body .knockout-table {
   margin-top: 20px;
   border: 1px solid;
   border-collapse: collapse;
+}
+body .knockout-table tr.selectable {
+  cursor: pointer;
+}
+body .knockout-table tr.selectable:hover {
+  background-color: #808080;
 }
 body .knockout-table td {
   text-align: center;

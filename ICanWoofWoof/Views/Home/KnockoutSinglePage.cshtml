@@ -26,7 +26,7 @@
             </ul>
             
             <div>
-                <table class="knockout-table">
+                <table class="knockout-table " data-bind="css: { hidden: chosenMailData() != null}">
                     <thead>
                         <tr>
                             <th>From</th>
@@ -36,7 +36,7 @@
                         </tr>
                     </thead>
                     <tbody data-bind="foreach: folderData">
-                        <tr>
+                        <tr class="selectable" data-bind="click: $root.selectMail">
                             <td data-bind="text: From"></td>
                             <td data-bind="text: To"></td>
                             <td data-bind="text: Date"></td>
@@ -44,6 +44,16 @@
                         </tr>
                     </tbody>
                 </table>
+            </div>
+            
+            <div>
+                <div data-bind="with: chosenMailData">
+                    <p>From</p>
+                    <p>To</p>
+                    <p>Date</p>
+                    <p>Subject</p>
+                </div>
+
             </div>
         </div>
     </div>

@@ -3,7 +3,7 @@
 
 @section Scripts
 {
-    @Scripts.Render("~/Scripts/Custom/KnockoutSinglePage.js")
+    @Scripts.Render("~/Scripts/Custom/KnockoutSinglePage.js","~/Scripts/sammy-0.7.4.js")
 }
 
 @section  Header
@@ -26,7 +26,7 @@
             </ul>
             
             <div>
-                <table class="knockout-table " data-bind="css: { hidden: chosenMailData() != null}">
+                <table class="knockout-table " data-bind="css: { hidden: chosenMailData() != null || folderData() == null}">
                     <thead>
                         <tr>
                             <th>From</th>
@@ -49,9 +49,13 @@
             <div>
                 <div data-bind="with: chosenMailData">
                     <h2 data-bind="text: Subject"> </h2>
-                    <p><label>From: </label> <span data-bind="text: From"> </span> </p>
-                    <p><label>To: </label> <span data-bind="text: To"> </span> </p>
-                    <p><label>Date: </label> <span data-bind="text: Date"> </span> </p>
+                    <p><span>From: </span> <span data-bind="text: From"> </span> </p>
+                    <p><span>To: </span> <span data-bind="text: To"> </span> </p>
+                    <p><span>Date: </span> <span data-bind="text: Date"> </span> </p>
+                    
+                    <p data-bind="text: Body">
+                        
+                    </p>
                 </div>
 
             </div>

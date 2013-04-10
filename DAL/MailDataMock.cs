@@ -38,7 +38,12 @@ namespace DAL
                     return mails.Where(m => m.IsArchive).ToList();
             }
             return new List<Mail>();
-        } 
+        }
+
+        public Mail GetMails(int id)
+        {
+            return mails.FirstOrDefault(m => m.Id == id);
+        }
 
         private void Initialize()
         {

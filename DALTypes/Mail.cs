@@ -8,6 +8,13 @@ namespace DALTypes
 {
     public class Mail
     {
+        private static int _id;
+        public Mail()
+        {
+            Id = _id++;
+        }
+
+        public int Id { get; set; }
         public string To { get; set; }
         public string From { get; set; }
         public DateTime Date { get; set; }

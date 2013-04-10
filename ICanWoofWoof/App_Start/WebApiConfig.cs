@@ -11,16 +11,10 @@ namespace ICanWoofWoof
         public static void Register(HttpConfiguration config)
         {
             config.Routes.MapHttpRoute(
-                name: "MailAPI",
-                routeTemplate: "api/mailapi/{folder}",
-                defaults: new { controller = "MailAPI" }
+                name: "DefaultApi",
+                routeTemplate: "api/{controller}/{id}",
+                defaults: new { id = RouteParameter.Optional }
                 );
-            
-            //config.Routes.MapHttpRoute(
-            //    name: "DefaultApi",
-            //    routeTemplate: "api/{controller}/{folder}",
-            //    defaults: new { folder = RouteParameter.Optional  }
-            //    );
 
         }
     }

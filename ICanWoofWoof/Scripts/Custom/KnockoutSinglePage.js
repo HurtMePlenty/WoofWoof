@@ -22,7 +22,9 @@
             this.get('#:folder', function() {
                 self.chosenFolderId(this.params.folder);
                 self.chosenMailData(null);
-                $.get('/api/mailapi/' + this.params.folder, self.folderData);
+                $.get('/Mail/Get/' + this.params.folder, function(data) {
+                    self.folderData(data);
+                });
             });
 
             this.get('#:folder/', function() {

@@ -11,5 +11,6 @@ namespace DAL
     {
         IList<Mail> GetMails();
         IList<Mail> GetMails(Mail.Folders folder);
+        Mail GetMails(int id);
     }
 }

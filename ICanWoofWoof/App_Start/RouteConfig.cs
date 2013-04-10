@@ -13,6 +13,9 @@ namespace ICanWoofWoof
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            routes.MapRoute("Mail", "Mail/Get/{folder}", new { controller = "Mail", action = "Get" }
+               );
+
             routes.MapRoute("Modernizer", "Modern", new {controller = "Home", action = "CheckModernizer"}
                 );
 

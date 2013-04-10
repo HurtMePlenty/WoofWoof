@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Minimod.Mvc3JsonNetResult</id>
+    <version>0.9.2</version>
+    <title>Minimod.Mvc3JsonNetResult</title>
+    <authors>Lars Corneliussen</authors>
+    <owners>Lars Corneliussen</owners>
+    <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Comes with a DataActionResult that serializes passed data using JSON.NET from Newtonsoft.</description>
+    <summary>Comes with a DataActionResult that serializes passed data using JSON.NET from Newtonsoft.</summary>
+    <releaseNotes />
+    <copyright />
+    <language />
+    <tags>minimod</tags>
+    <dependencies>
+      <dependency id="Newtonsoft.Json" />
+    </dependencies>
+    <references />
+  </metadata>
+</package>

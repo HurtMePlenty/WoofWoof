@@ -22,3 +22,6 @@ body .page-header {
 body .modernizer-container {
   margin: 20px 0;
 }
+body .container {
+  padding: 10px;
+}

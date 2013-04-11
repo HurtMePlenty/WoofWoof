@@ -18,6 +18,10 @@ namespace ICanWoofWoof.Controllers
         [HttpPost]
         public ActionResult Login(RegisterModel model)
         {
+            if(Membership.ValidateUser(model.Login, model.Password))
+            {
+                
+            }
             return View();
         }
 
@@ -29,6 +33,7 @@ namespace ICanWoofWoof.Controllers
         [HttpPost]
         public ActionResult Register(RegisterModel model)
         {
+            Membership.CreateUser(model.Login, model.Password, model.Email);
             return RedirectToAction("Login");
         }
 

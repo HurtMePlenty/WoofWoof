@@ -16,7 +16,18 @@ namespace ICanWoofWoof.Controllers
         }
 
         [HttpPost]
-        public ActionResult Login(LoginModel model)
+        public ActionResult Login(RegisterModel model)
+        {
+            return View();
+        }
+
+        public ActionResult Register()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Register(RegisterModel model)
         {
             return View();
         }

@@ -1,8 +1,9 @@
-﻿@model ICanWoofWoof.Models.LoginModel
+﻿@model ICanWoofWoof.Models.RegisterModel
 
-<h2> Login </h2>
+<h2>Register</h2>
 
-@using(Html.BeginForm("Login","Account")){
+
+@using(Html.BeginForm("Register","Account")){
 <div class="row-fluid">
     <div class="span5">
         <div class="container">
@@ -14,9 +15,13 @@
                 @Html.LabelFor(m=>m.Password)
                 @Html.PasswordFor(m=>m.Password)
             </p>
+            <p>
+                @Html.LabelFor(m=>m.Email)
+                @Html.EditorFor(m=>m.Email)
+            </p>
             
             <p>
-                <input type="submit" value="Go!" class="btn"/>
+                <input type="submit" value="Register" class="btn"/>
             </p>
         </div>
     </div>

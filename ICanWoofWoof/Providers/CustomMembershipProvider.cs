@@ -3,14 +3,29 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Security;
+using DAL;
 
 namespace ICanWoofWoof.Providers
 {
     public class CustomMembershipProvider: MembershipProvider
     {
+        private  UserManager _userManager;
+        private string _connectionStringName;
         public override MembershipUser CreateUser(string username, string password, string email, string passwordQuestion, string passwordAnswer, bool isApproved, object providerUserKey, out MembershipCreateStatus status)
         {
-            throw new NotImplementedException();
+            if (_userManager.GetUser(username) == null)
+            {
+                var user = new User() {UserName = username, Password = password, UserEmailAddress = email};
+                _userManager.RegisterUser(user);
+            }
+            else
+            {
+                status = MembershipCreateStatus.DuplicateUserName;
+                return null;
+            }
+
+            status = MembershipCreateStatus.Success;
+            return GetUser(username, true);
         }
 
         public override bool ChangePasswordQuestionAndAnswer(string username, string password, string newPasswordQuestion, string newPasswordAnswer)
@@ -40,7 +55,7 @@ namespace ICanWoofWoof.Providers
 
         public override bool ValidateUser(string username, string password)
         {
-            throw new NotImplementedException();
+            return _userManager.Validate(username, password);
         }
 
         public override bool UnlockUser(string userName)
@@ -55,7 +70,10 @@ namespace ICanWoofWoof.Providers
 
         public override MembershipUser GetUser(string username, bool userIsOnline)
         {
-            throw new NotImplementedException();
+            var user = _userManager.GetUser(username);
+            return new MembershipUser("CustomMembershipProvider", user.UserName, user.UserID, user.UserEmailAddress,
+                                      string.Empty, string.Empty, true, false, DateTime.MinValue, DateTime.MinValue,
+                                      DateTime.MinValue, DateTime.Now, DateTime.Now);
         }
 
         public override string GetUserNameByEmail(string email)
@@ -139,5 +157,15 @@ namespace ICanWoofWoof.Providers
         {
             get { throw new NotImplementedException(); }
         }
+
+        public override void Initialize(string name, System.Collections.Specialized.NameValueCollection config)
+        {
+            _connectionStringName = config["connectionString"];
+            _userManager = new UserManager(_connectionStringName);
+            base.Initialize(name, config);
+        }
+
+
+
     }
 }

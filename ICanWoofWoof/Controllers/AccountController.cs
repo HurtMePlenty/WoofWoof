@@ -29,7 +29,7 @@ namespace ICanWoofWoof.Controllers
         [HttpPost]
         public ActionResult Register(RegisterModel model)
         {
-            return View();
+            return RedirectToAction("Login");
         }
 
     }

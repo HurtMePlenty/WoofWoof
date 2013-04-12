@@ -25,3 +25,8 @@ body .modernizer-container {
 body .container {
   padding: 10px;
 }
+body .user-hello-message {
+  text-align: left;
+  font-style: italic;
+  line-height: 150%;
+}

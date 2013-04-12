@@ -16,18 +16,30 @@ namespace ICanWoofWoof.Controllers
         }
 
         [HttpPost]
-        public ActionResult Login(RegisterModel model)
+        public ActionResult Login(LoginModel model)
         {
             if(Membership.ValidateUser(model.Login, model.Password))
             {
-                
+                FormsAuthentication.SetAuthCookie(model.Login, model.RememberMe);
             }
-            return View();
+            else
+            {
+                ViewBag.Error = "User is invalid";
+                return View(model);
+            }
+            return RedirectToAction("Index", "Home");
         }
 
         public ActionResult Register()
         {
             return View();
+        }
+
+        [Authorize]
+        public ActionResult LogOff()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Index", "Home");
         }
 
         [HttpPost]

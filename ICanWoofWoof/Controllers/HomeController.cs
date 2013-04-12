@@ -48,6 +48,7 @@ namespace ICanWoofWoof.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public ActionResult CheckHelpers()
         {
             return View(new CheckHelpersModel());
@@ -55,6 +56,7 @@ namespace ICanWoofWoof.Controllers
         
         
         [HttpPost]
+        [Authorize]
         public ActionResult CheckHelpers(CheckHelpersModel model)
         {   
             if (!ModelState.IsValid)

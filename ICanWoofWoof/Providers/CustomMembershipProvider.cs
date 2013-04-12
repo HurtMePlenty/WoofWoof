@@ -160,7 +160,7 @@ namespace ICanWoofWoof.Providers
 
         public override void Initialize(string name, System.Collections.Specialized.NameValueCollection config)
         {
-            _connectionStringName = config["connectionString"];
+            _connectionStringName = config["connectionStringName"];
             _userManager = new UserManager(_connectionStringName);
             base.Initialize(name, config);
         }
